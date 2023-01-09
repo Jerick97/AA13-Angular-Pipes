@@ -1,10 +1,18 @@
-<div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm mt-5">
-    <h1>Uso de Pipes</h1>
+<div class="block p-4 rounded-lg shadow-lg bg-white max-w-sm mt-3 w-96">
+    <h1 class="text-2xl font-bold mb-6 text-gray-800">UpperCase Pipes</h1>
       <div class="form-group mb-6">
-        <label for="name" class="form-label inline-block mb-2 text-gray-700">Valor : </label>
-        <input [(ngModel)]="name" type="text" id="name"  class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputPassword1" placeholder="Valor">
+        <label for="name" class="form-label inline-block mb-2 text-gray-700">Texto : </label>
+        <input [(ngModel)]="name" type="text" id="name"  class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Valor">
       </div>
       <div class="form-group mb-6">
-        <p class="text-black">Mayúsculas : {{name | uppercase}}</p>
+        <div *ngIf="name !== undefined && name !== ''" role="alert"> <!--Muéstrame el contenido solo si el usuario ingresa un valor en el Input-->
+            <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2">
+                Mayúsculas
+            </div>
+            <div class="border border-t-0 border-blue-400 rounded-b bg-blue-100 px-4 py-3 text-blue-700">
+                <p class="text-black">{{name | uppercase}}</p> <!--Transforma en Mayúscula el Valor ingresado en el Input-->
+            </div>
+          </div>
       </div>
+      
 </div>

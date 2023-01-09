@@ -16,6 +16,5 @@ export class CurrencyComponent implements OnInit {
 
   capturarSelect(){
     this.monedaElegida = this.selectedOption;
-  
-}
+  }
 }
